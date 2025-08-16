@@ -33,14 +33,14 @@ function Main() {
 
   return (
     <div className='flex flex-col justify-center items-center h-full p-4 space-y-6'>
-        <h6 className='mb-24 w-full text-center'>Find the freshest LinkedIn jobs by keyword and posting time <br /> tailored to your search.</h6>
+        <h6 className=' w-full text-center text-sm sm:text-base md:text-lg'>Find the freshest LinkedIn jobs by keyword and posting time <br /> tailored to your search.</h6>
             <input type="text" 
                 value={keyword} 
                 onChange={(e) => setKeyword(e.target.value)} 
                 placeholder='search keyword' 
-                className='outline-0 border rounded-xl p-2 text-center w-9/10'/>
+                className='outline-0 border rounded-xl p-2 text-center w-full max-w-md'/>
 
-            <div className='flex flex-wrap justify-center gap-2 w-9/10'>
+            <div className='flex flex-wrap justify-center gap-2 w-full max-w-xl'>
                 {Object.entries(timeOptions).map(([label,seconds]) => (
                     <button 
                         key={label} 
@@ -52,13 +52,13 @@ function Main() {
                 ))}
 
             </div>
-            <h1>{keyword ? 
+            <h1 className="text-center text-base sm:text-lg md:text-xl">{keyword ? 
                 `${keyword} jobs posted in the last ${Object.keys(timeOptions).find((label)=> timeOptions[label]=== time)}` 
                 : "Search for jobs by keyword and time"}</h1>
 
             <a href={searchUrl}
                 target='_blank'
-                className="ml-2 p-2 border rounded-xl cursor-pointer bg-zinc-200 hover:bg-zinc-300"
+                className="px-4 py-2 border rounded-xl cursor-pointer bg-zinc-200 hover:bg-zinc-300 text-center"
                 >Search</a>
     </div>
   )

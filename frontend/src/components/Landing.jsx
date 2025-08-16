@@ -3,7 +3,7 @@ import Card from './Card'
 
 function Landing() {
   return (
-    <div className='bg-zinc-200 h-screen w-screen items-center justify-center flex font-mono'>
+    <div className='bg-zinc-200 min-h-screen w-screen flex items-center justify-center font-mono p-4'>
         <Card />
     </div>
   )
